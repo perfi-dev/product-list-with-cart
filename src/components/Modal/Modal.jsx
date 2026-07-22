@@ -1,4 +1,5 @@
 import ModalItem from "../ModalItem/ModalItem";
+import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
 
 function Modal() {
   return (
@@ -28,7 +29,7 @@ function Modal() {
           </div>
         </div>
 
-        <ButtonPrimary />
+        <ButtonPrimary>Start New Order</ButtonPrimary>
       </div>
     </div>
   );
