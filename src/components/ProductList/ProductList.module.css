@@ -1,0 +1,17 @@
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-400);
+}
+
+.title {
+  color: var(--color-rose-900);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: var(--sp-300);
+
+  list-style: none;
+}
