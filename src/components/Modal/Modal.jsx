@@ -1,3 +1,5 @@
+import ModalItem from "../ModalItem/ModalItem";
+
 function Modal() {
   return (
     <div>
