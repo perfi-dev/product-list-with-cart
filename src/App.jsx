@@ -1,6 +1,7 @@
 import Main from "./components/Main/Main";
 import ProductList from "./components/ProductList/ProductList";
 import Cart from "./components/Cart/Cart";
+import Modal from "./components/Modal/Modal";
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
         <ProductList />
         <Cart />
       </Main>
+
+      <Modal />
     </>
   );
 }
