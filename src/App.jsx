@@ -30,7 +30,10 @@ function App() {
   }
 
   function handleDecrementQuantity(product) {
-    if (product.quantity <= 1) return;
+    if (product.quantity <= 1) {
+      handleRemoveItem(product);
+      return;
+    }
 
     setCart((currentCart) =>
       currentCart.map((item) =>
@@ -38,6 +41,12 @@ function App() {
           ? { ...item, quantity: item.quantity - 1 }
           : item,
       ),
+    );
+  }
+
+  function handleRemoveItem(product) {
+    setCart((currentCart) =>
+      currentCart.filter((item) => item.id !== product.id),
     );
   }
 
@@ -50,7 +59,7 @@ function App() {
           onIncrementQuantity={handleIncrementQuantity}
           onDecrementQuantity={handleDecrementQuantity}
         />
-        <Cart cart={cart} />
+        <Cart cart={cart} onRemoveItem={handleRemoveItem} />
       </Main>
 
       {/* <Modal /> */}

@@ -3,13 +3,13 @@ import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
 
 import styles from "./Cart.module.css";
 
-function CartFilled({ cart }) {
+function CartFilled({ cart, onRemoveItem }) {
   return (
     <>
       <ul className={styles.list}>
         {cart.map((item) => (
           <li className={styles.listItem} key={item.id}>
-            <CartItem item={item} />
+            <CartItem item={item} onRemoveItem={onRemoveItem} />
           </li>
         ))}
       </ul>

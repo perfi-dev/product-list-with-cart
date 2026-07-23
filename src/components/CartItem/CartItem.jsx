@@ -1,6 +1,6 @@
 import styles from "./CartItem.module.css";
 
-function CartItem({ item }) {
+function CartItem({ item, onRemoveItem }) {
   return (
     <article className={styles.item}>
       <div className={styles.itemDetails}>
@@ -19,7 +19,11 @@ function CartItem({ item }) {
         </div>
       </div>
 
-      <button type="button" className={styles.btnRemoveItem}>
+      <button
+        type="button"
+        className={styles.btnRemoveItem}
+        onClick={() => onRemoveItem(item)}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="10"
