@@ -11,15 +11,45 @@ function App() {
   function handleAddToCart(product) {
     const inCart = cart.some((item) => item.id === product.id);
 
-    if (inCart) return;
+    if (inCart) {
+      setCart((currentCart) =>
+        currentCart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item,
+        ),
+      );
+      return;
+    }
 
     setCart((currentCart) => [...currentCart, { ...product, quantity: 1 }]);
+  }
+
+  function handleIncrementQuantity(product) {
+    handleAddToCart(product);
+  }
+
+  function handleDecrementQuantity(product) {
+    if (product.quantity <= 1) return;
+
+    setCart((currentCart) =>
+      currentCart.map((item) =>
+        item.id === product.id
+          ? { ...item, quantity: item.quantity - 1 }
+          : item,
+      ),
+    );
   }
 
   return (
     <>
       <Main>
-        <ProductList cart={cart} onAddToCart={handleAddToCart} />
+        <ProductList
+          cart={cart}
+          onAddToCart={handleAddToCart}
+          onIncrementQuantity={handleIncrementQuantity}
+          onDecrementQuantity={handleDecrementQuantity}
+        />
         <Cart cart={cart} />
       </Main>
 

@@ -1,6 +1,12 @@
 import styles from "./Product.module.css";
 
-function Product({ product, cart, onAddToCart }) {
+function Product({
+  product,
+  cart,
+  onAddToCart,
+  onIncrementQuantity,
+  onDecrementQuantity,
+}) {
   const productInCart = cart.find((item) => item.id === product.id);
 
   return (
@@ -14,7 +20,11 @@ function Product({ product, cart, onAddToCart }) {
 
         {productInCart ? (
           <div className={styles.btnControls}>
-            <button type="button" className={styles.control}>
+            <button
+              type="button"
+              className={styles.control}
+              onClick={() => onDecrementQuantity(productInCart)}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="10"
@@ -28,7 +38,11 @@ function Product({ product, cart, onAddToCart }) {
             <span className={`${styles.quantity} text-preset-4-bold`}>
               {productInCart.quantity}
             </span>
-            <button type="button" className={styles.control}>
+            <button
+              type="button"
+              className={styles.control}
+              onClick={() => onIncrementQuantity(productInCart)}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="10"
