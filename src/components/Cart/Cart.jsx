@@ -1,5 +1,7 @@
-import styles from "./Cart.module.css";
 import CartEmpty from "./CartEmpty";
+// import CartFilled from "./CartFilled";
+
+import styles from "./Cart.module.css";
 
 function Cart() {
   return (
@@ -7,6 +9,7 @@ function Cart() {
       <h2 className={`${styles.title} text-preset-2`}>Your Cart (0)</h2>
 
       <CartEmpty />
+      {/* <CartFilled />  */}
     </aside>
   );
 }

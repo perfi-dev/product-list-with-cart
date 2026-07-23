@@ -1,0 +1,51 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-100);
+}
+
+.itemName {
+  color: var(--color-rose-900);
+}
+
+.itemAmount {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-100);
+}
+
+.itemQuantity {
+  color: var(--color-red);
+}
+
+.itemPrice,
+.itemTotalPrice {
+  color: var(--color-rose-500);
+}
+
+.btnRemoveItem {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 100%;
+  border: 1px solid var(--color-rose-400);
+  background-color: var(--color-white);
+  cursor: pointer;
+}
+
+.btnRemoveItem:hover,
+.btnRemoveItem:focus-visible {
+  border: 1px solid var(--color-rose-900);
+}
+
+.btnRemoveItem:hover svg path,
+.btnRemoveItem:focus-visible svg path {
+  fill: var(--color-rose-900);
+}

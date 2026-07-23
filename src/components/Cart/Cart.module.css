@@ -30,3 +30,63 @@
 .text {
   color: var(--color-rose-500);
 }
+
+/* Filled Cart */
+.list {
+  list-style: none;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: var(--sp-200) 0;
+  border-bottom: 1px solid var(--color-rose-100);
+}
+
+.listItem:first-child {
+  padding-top: 0;
+}
+
+.listItem:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  border: 1px solid var(--color-rose-100);
+}
+
+.orderTotalBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.orderTotalText,
+.orderTotalPrice {
+  color: var(--color-rose-900);
+}
+
+.carbonBox {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-100);
+
+  padding: var(--sp-200);
+  border-radius: var(--sp-100);
+  background-color: var(--color-rose-50);
+}
+
+.carbonImage {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.carbonText {
+  color: var(--color-rose-900);
+}
