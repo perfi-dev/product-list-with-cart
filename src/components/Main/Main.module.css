@@ -2,4 +2,13 @@
   display: grid;
   grid-template-columns: 1fr;
   row-gap: var(--sp-400);
+
+  max-width: 76rem;
+}
+
+@media (min-width: 64em) {
+  .main {
+    grid-template-columns: repeat(2, auto);
+    column-gap: var(--sp-400);
+  }
 }

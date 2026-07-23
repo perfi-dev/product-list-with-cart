@@ -90,3 +90,10 @@
 .carbonText {
   color: var(--color-rose-900);
 }
+
+@media (min-width: 64em) {
+  .cart {
+    align-self: flex-start;
+    width: 24rem;
+  }
+}

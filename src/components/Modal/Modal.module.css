@@ -79,3 +79,16 @@
 .totalPrice {
   color: var(--color-rose-900);
 }
+
+@media (min-width: 30em) {
+  .overlay {
+    align-items: center;
+    padding: var(--sp-300);
+  }
+
+  .modal {
+    max-width: 37rem;
+    padding: var(--sp-500);
+    border-radius: var(--sp-150);
+  }
+}

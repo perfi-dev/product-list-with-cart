@@ -15,3 +15,16 @@
 
   list-style: none;
 }
+
+@media (min-width: 30em) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--sp-300);
+  }
+}
+
+@media (min-width: 48em) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
