@@ -3,7 +3,7 @@ import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
 
 import styles from "./Cart.module.css";
 
-function CartFilled({ cart, onRemoveItem }) {
+function CartFilled({ cart, onRemoveItem, onConfirmOrder }) {
   const cartTotalPrice = cart.reduce((acc, i) => acc + i.quantity * i.price, 0);
 
   return (
@@ -38,7 +38,7 @@ function CartFilled({ cart, onRemoveItem }) {
         </p>
       </div>
 
-      <ButtonPrimary>Confirm Order</ButtonPrimary>
+      <ButtonPrimary onClick={onConfirmOrder}>Confirm Order</ButtonPrimary>
     </>
   );
 }

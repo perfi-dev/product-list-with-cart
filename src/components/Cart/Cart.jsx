@@ -3,7 +3,7 @@ import CartFilled from "./CartFilled";
 
 import styles from "./Cart.module.css";
 
-function Cart({ cart, onRemoveItem }) {
+function Cart({ cart, onRemoveItem, onConfirmOrder }) {
   const cartQuantity = cart.reduce((acc, i) => acc + i.quantity, 0);
 
   return (
@@ -15,7 +15,11 @@ function Cart({ cart, onRemoveItem }) {
       {cart.length === 0 ? (
         <CartEmpty />
       ) : (
-        <CartFilled cart={cart} onRemoveItem={onRemoveItem} />
+        <CartFilled
+          cart={cart}
+          onRemoveItem={onRemoveItem}
+          onConfirmOrder={onConfirmOrder}
+        />
       )}
     </aside>
   );

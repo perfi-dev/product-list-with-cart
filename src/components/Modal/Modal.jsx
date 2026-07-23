@@ -3,7 +3,9 @@ import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
 
 import styles from "./Modal.module.css";
 
-function Modal() {
+function Modal({ onNewOrder, cart }) {
+  const totalPrice = cart.reduce((acc, i) => acc + i.quantity * i.price, 0);
+
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
@@ -22,20 +24,22 @@ function Modal() {
 
         <div className={styles.order}>
           <ul className={styles.list}>
-            <ModalItem />
-            <ModalItem />
-            <ModalItem />
+            {cart.map((item) => (
+              <ModalItem key={item.id} item={item} />
+            ))}
           </ul>
 
           <div className={styles.divider}></div>
 
           <div className={styles.total}>
             <p className={`${styles.text} text-preset-4`}>Order Total</p>
-            <span className={`${styles.totalPrice} text-preset-2`}>$46.50</span>
+            <span className={`${styles.totalPrice} text-preset-2`}>
+              ${totalPrice.toFixed(2)}
+            </span>
           </div>
         </div>
 
-        <ButtonPrimary>Start New Order</ButtonPrimary>
+        <ButtonPrimary onClick={onNewOrder}>Start New Order</ButtonPrimary>
       </div>
     </div>
   );
