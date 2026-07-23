@@ -3,7 +3,7 @@ import products from "../../data/data.json";
 
 import styles from "./ProductList.module.css";
 
-function ProductList() {
+function ProductList({ cart, onAddToCart }) {
   return (
     <section className={styles.products}>
       <h1 className={`${styles.title} text-preset-1`}>Desserts</h1>
@@ -11,7 +11,7 @@ function ProductList() {
       <ul className={styles.list}>
         {products.map((product) => (
           <li className={styles.item} key={product.id}>
-            <Product product={product} />
+            <Product product={product} cart={cart} onAddToCart={onAddToCart} />
           </li>
         ))}
       </ul>
