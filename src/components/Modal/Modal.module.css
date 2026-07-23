@@ -1,0 +1,80 @@
+.overlay {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  inset: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-400);
+
+  width: 100%;
+  padding: var(--sp-500) var(--sp-300) var(--sp-300) var(--sp-300);
+  border-top-left-radius: var(--sp-150);
+  border-top-right-radius: var(--sp-150);
+  background-color: var(--color-white);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-300);
+}
+
+.image {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-100);
+}
+
+.title {
+  color: var(--color-rose-900);
+}
+
+.message {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-rose-500);
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-300);
+
+  width: 100%;
+  padding: var(--sp-300);
+  border-radius: var(--sp-100);
+  background-color: var(--color-rose-50);
+}
+
+.list {
+  list-style: none;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  border: 1px solid var(--color-rose-100);
+}
+
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text,
+.totalPrice {
+  color: var(--color-rose-900);
+}
