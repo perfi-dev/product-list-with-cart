@@ -12,6 +12,7 @@
   color: var(--color-red);
 }
 
+/* Empty Cart */
 .content {
   display: flex;
   flex-direction: column;
