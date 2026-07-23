@@ -1,20 +1,20 @@
 import styles from "./CartItem.module.css";
 
-function CartItem() {
+function CartItem({ item }) {
   return (
     <article className={styles.item}>
       <div className={styles.itemDetails}>
-        <h3 className={`${styles.itemName} text-preset-4-bold`}>
-          Classic Tiramisu
-        </h3>
+        <h3 className={`${styles.itemName} text-preset-4-bold`}>{item.name}</h3>
 
         <div className={styles.itemAmount}>
           <span className={`${styles.itemQuantity} text-preset-4-bold`}>
-            1x
+            {item.quantity}x
           </span>
-          <span className={`${styles.itemPrice} text-preset-4`}>@ $5.50</span>
+          <span className={`${styles.itemPrice} text-preset-4`}>
+            @ ${item.price.toFixed(2)}
+          </span>
           <span className={`${styles.itemTotalPrice} text-preset-4-bold`}>
-            $5.50
+            ${(item.quantity * item.price).toFixed(2)}
           </span>
         </div>
       </div>

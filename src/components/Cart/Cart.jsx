@@ -8,7 +8,7 @@ function Cart({ cart }) {
     <aside className={styles.cart}>
       <h2 className={`${styles.title} text-preset-2`}>Your Cart (0)</h2>
 
-      {cart.length === 0 ? <CartEmpty /> : <CartFilled />}
+      {cart.length === 0 ? <CartEmpty /> : <CartFilled cart={cart} />}
     </aside>
   );
 }
