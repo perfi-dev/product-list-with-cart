@@ -16,9 +16,9 @@ function Modal() {
 
         <div>
           <ul>
-            <li>
-              <ModalItem />
-            </li>
+            <ModalItem />
+            <ModalItem />
+            <ModalItem />
           </ul>
 
           <div></div>
