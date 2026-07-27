@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Main from "./components/Main/Main";
 import ProductList from "./components/ProductList/ProductList";
@@ -6,8 +6,16 @@ import Cart from "./components/Cart/Cart";
 import Modal from "./components/Modal/Modal";
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    const savedCart = localStorage.getItem("cart");
+
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   function handleAddToCart(product) {
     const inCart = cart.some((item) => item.id === product.id);
