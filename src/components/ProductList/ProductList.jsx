@@ -1,11 +1,13 @@
 import Product from "../Product/Product";
 import Loader from "../Loader/Loader";
+import Error from "../Error/Error";
 
 import styles from "./ProductList.module.css";
 
 function ProductList({
   products,
   isLoading,
+  error,
   cart,
   onAddToCart,
   onIncrementQuantity,
@@ -17,6 +19,8 @@ function ProductList({
 
       {isLoading ? (
         <Loader />
+      ) : error ? (
+        <Error error={error} />
       ) : (
         <ul className={styles.list}>
           {products.map((product) => (

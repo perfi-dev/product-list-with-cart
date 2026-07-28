@@ -10,6 +10,7 @@ import timeout from "./utils/timeout";
 function App() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const [cart, setCart] = useState(() => {
     const savedCart = localStorage.getItem("cart");
@@ -27,7 +28,8 @@ function App() {
 
         setProducts(data);
       } catch (err) {
-        console.log(err);
+        console.log(err.message);
+        setError("Failed to fetch products.");
       } finally {
         setIsLoading(false);
       }
@@ -97,6 +99,7 @@ function App() {
         <ProductList
           products={products}
           isLoading={isLoading}
+          error={error}
           cart={cart}
           onAddToCart={handleAddToCart}
           onIncrementQuantity={handleIncrementQuantity}
