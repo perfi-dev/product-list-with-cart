@@ -110,7 +110,7 @@ This project was built to practice:
 ## 📈 Planned Improvements
 
 - [x] Persist cart with Local Storage
-- [ ] Simulate API requests using `useEffect`
+- [x] Simulate API requests using `useEffect`
 - [ ] Loading state
 - [ ] Product stock availability
 - [ ] Refactor cart using Context API

@@ -5,13 +5,32 @@ import ProductList from "./components/ProductList/ProductList";
 import Cart from "./components/Cart/Cart";
 import Modal from "./components/Modal/Modal";
 
+import timeout from "./utils/timeout";
+
 function App() {
+  const [products, setProducts] = useState([]);
   const [cart, setCart] = useState(() => {
     const savedCart = localStorage.getItem("cart");
 
     return savedCart ? JSON.parse(savedCart) : [];
   });
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const res = await fetch("/assets/data/data.json");
+        await timeout(1000);
+        const data = await res.json();
+
+        setProducts(data);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    fetchProducts();
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -72,6 +91,7 @@ function App() {
     <>
       <Main>
         <ProductList
+          products={products}
           cart={cart}
           onAddToCart={handleAddToCart}
           onIncrementQuantity={handleIncrementQuantity}

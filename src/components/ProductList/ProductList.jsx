@@ -1,9 +1,9 @@
 import Product from "../Product/Product";
-import products from "../../data/data.json";
 
 import styles from "./ProductList.module.css";
 
 function ProductList({
+  products,
   cart,
   onAddToCart,
   onIncrementQuantity,
