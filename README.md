@@ -111,7 +111,7 @@ This project was built to practice:
 
 - [x] Persist cart with Local Storage
 - [x] Simulate API requests using `useEffect`
-- [ ] Loading state
+- [x] Loading state
 - [ ] Product stock availability
 - [ ] Refactor cart using Context API
 - [ ] Refactor cart logic using `useReducer`
