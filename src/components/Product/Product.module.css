@@ -13,6 +13,11 @@
   display: block;
   width: 100%;
   border-radius: var(--sp-100);
+  border: 2px solid transparent;
+}
+
+.imageSelected {
+  border: 2px solid var(--color-red);
 }
 
 .btnControls {
@@ -30,7 +35,6 @@
   border: none;
   border-radius: 999px;
   background-color: var(--color-red);
-  cursor: pointer;
 }
 
 .control {
@@ -44,6 +48,7 @@
   border-radius: 100%;
   background: none;
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .control:hover,
@@ -60,7 +65,7 @@
   color: var(--color-white);
 }
 
-.btnAddToCart {
+.btnProduct {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,11 +81,14 @@
   border: 1px solid var(--color-rose-400);
   border-radius: 999px;
   background-color: var(--color-white);
-  cursor: pointer;
-  transition: all 0.2s ease;
 
   font-family: "Red Hat Text", sans-serif;
   color: var(--color-rose-900);
+}
+
+.btnAddToCart {
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .btnAddToCart:hover,

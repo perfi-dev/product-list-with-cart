@@ -8,6 +8,7 @@ function Product({
   onDecrementQuantity,
 }) {
   const productInCart = cart.find((item) => item.id === product.id);
+  const isOutOfStock = product.stock < 1;
 
   return (
     <article className={styles.product}>
@@ -15,10 +16,22 @@ function Product({
         <picture>
           <source media="(min-width: 64em)" srcSet={product.image.desktop} />
           <source media="(min-width: 48em)" srcSet={product.image.tablet} />
-          <img src={product.image.mobile} alt="" className={styles.image} />
+          <img
+            src={product.image.mobile}
+            alt=""
+            className={`${styles.image} ${isOutOfStock ? styles.imageOut : ""} ${productInCart ? styles.imageSelected : ""}`}
+          />
         </picture>
 
-        {productInCart ? (
+        {isOutOfStock ? (
+          <button
+            type="button"
+            className={`${styles.btnProduct} text-preset-4-bold`}
+            disabled
+          >
+            Out of Stock
+          </button>
+        ) : productInCart ? (
           <div className={styles.btnControls}>
             <button
               type="button"
@@ -60,7 +73,7 @@ function Product({
         ) : (
           <button
             type="button"
-            className={`${styles.btnAddToCart} text-preset-4-bold`}
+            className={`${styles.btnProduct} ${styles.btnAddToCart} text-preset-4-bold`}
             onClick={() => onAddToCart(product)}
           >
             <img

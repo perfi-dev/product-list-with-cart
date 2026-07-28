@@ -43,9 +43,11 @@ function App() {
   }, [cart]);
 
   function handleAddToCart(product) {
-    const inCart = cart.some((item) => item.id === product.id);
+    const cartItem = cart.find((item) => item.id === product.id);
 
-    if (inCart) {
+    if (cartItem) {
+      if (cartItem.quantity + 1 > product.stock) return;
+
       setCart((currentCart) =>
         currentCart.map((item) =>
           item.id === product.id
