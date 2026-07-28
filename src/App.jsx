@@ -9,6 +9,8 @@ import timeout from "./utils/timeout";
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   const [cart, setCart] = useState(() => {
     const savedCart = localStorage.getItem("cart");
 
@@ -26,6 +28,8 @@ function App() {
         setProducts(data);
       } catch (err) {
         console.log(err);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -92,6 +96,7 @@ function App() {
       <Main>
         <ProductList
           products={products}
+          isLoading={isLoading}
           cart={cart}
           onAddToCart={handleAddToCart}
           onIncrementQuantity={handleIncrementQuantity}

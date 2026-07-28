@@ -4,11 +4,21 @@
   row-gap: var(--sp-400);
 
   max-width: 76rem;
+  margin: 0 auto;
+  padding: var(--sp-300);
+}
+
+@media (min-width: 48em) {
+  .main {
+    padding: var(--sp-500);
+  }
 }
 
 @media (min-width: 64em) {
   .main {
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: 1fr auto;
     column-gap: var(--sp-400);
+
+    padding: var(--sp-1100) var(--sp-500);
   }
 }

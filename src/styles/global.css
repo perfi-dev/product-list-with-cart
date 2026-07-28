@@ -5,24 +5,6 @@
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: var(--sp-300);
   background-color: var(--color-rose-50);
-
   font-family: "Red Hat Text", sans-serif;
-}
-
-@media (min-width: 48em) {
-  body {
-    padding: var(--sp-500);
-  }
-}
-
-@media (min-width: 64em) {
-  body {
-    padding: var(--sp-1100) var(--sp-500);
-  }
 }
